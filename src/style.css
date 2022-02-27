@@ -1,21 +1,23 @@
-.capaPrincipal{
-  display:flex;
-  justify-content: center;
+input{
+  color: coral;
+  width: 100px;
+  line-height: 100px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 4rem;
+  border: 1px dotted coral;  
 }
 
-.capaImagen{
-  background-color: coral;
-  margin: auto;
-  position: relative;
-  width: auto;
-  height: auto;
-  border: 1px solid rgb(233, 193, 193);
-  text-align: center;
-  border-radius: 5px;
+.caja{
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+
 }
 
-.formatoTexto{
-  text-align: center;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+.btnSuma{
+  font-size: 2rem;
+  padding: 5px 15px;
+  color: darkred;
 }
