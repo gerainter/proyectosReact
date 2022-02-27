@@ -1,23 +1,16 @@
-input{
+.nombreRey{
+  font-size: 25px;
   color: coral;
-  width: 100px;
-  line-height: 100px;
-  margin: 5px;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 4rem;
-  border: 1px dotted coral;  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.caja{
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-
+.aficionRey{
+  font-size: 25px;
+  color: forestgreen;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.btnSuma{
-  font-size: 2rem;
-  padding: 5px 15px;
-  color: darkred;
+div{
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
 }

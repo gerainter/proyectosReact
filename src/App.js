@@ -2,58 +2,42 @@ import React,{useState} from "react";
 import "./style.css";
 
 const App = () => {
-  const[nombre,setNombre] = useState("Gerry");
-  const cambiarNombre=()=>{
-    setNombre("Hiren")
+  const reyesGodos=[
+    {
+      nombre: "Ataúlfo",
+      aficion: "comer toros sin pelar",
+    },{
+      nombre: "Recesvinto",
+      aficion: "leer a Hegel en arameo",
+    },{
+      nombre: "Teodorico",
+      aficion: "la cría del escarabajo en almíbar"
+    }
+  ]
+  const [contador,setContador] = useState(0);
+  const [nombreRey,setNombreRey] = useState(reyesGodos[0].nombre);
+  const [aficion,setAficion] = useState(reyesGodos[0].aficion);
+ 
+  const siguiente=(e)=>{ 
+    setContador(contador+1);
+    console.log("Click:"+contador);
+    setNombreRey(reyesGodos[contador].nombre);
+    setAficion(reyesGodos[contador].aficion); 
+    if(contador+1>=reyesGodos.length){
+      setContador(0);
+      console.log("Click c:"+contador);
+    }    
   }
-
-  let[numero,setNumero] = useState(0);
-  const incrementar=()=>{
-    setNumero(numero++);
-  }
-  const decrementar=()=>{
-    setNumero(numero--);
-  }
-  const resetear= () =>{
-    setNumero(0);
-  }
-
-  const [numero1,setNumero1] = useState();
-  const [numero2,setNumero2] = useState();
-  const [resultado,setResultado] = useState();
-
-  const suma=()=>{
-    setResultado(Number(numero1)+Number(numero2));
-  }
-
-  const actualiza1=(e)=>{
-    setNumero1(e.target.value);
-  }
-
-  const actualiza2=(e)=>{
-    setNumero2(e.target.value);
-  }
-
+  console.log("Inicio:"+contador);
   return (
-      <>
-      <div>
-          <h1>Hola me llamo {nombre}</h1>
-          <button onClick={cambiarNombre}>Cambiar Nombre</button>
-          <button onClick={()=>setNombre("Goku")}>Cambiar Nombre</button>
-          <h1>Numero:{numero}</h1>
-          <button onClick={()=>setNumero(numero++)}>Incrementar</button>
-          <button onClick={decrementar}>Decrementar</button>
-          <button onClick={resetear}>Resetear</button>
-      </div>
-      <p></p>
-      <div className="caja">
-        <input type="number" value={numero1} onChange={actualiza1}/>+
-        <input type="number" value={numero2} onChange={actualiza2}/>=
-        <input type="number" value={resultado} readOnly/>
-        <button onClick={suma} className="btnSuma">Sumar</button>
-      </div>
-      </>
-  );
+    <>
+    {/* Esto es un comentario dentro del return*/}
+    {/* Crear un <div> y un <button> */}   
+    <button onClick={siguiente}>Ver Siguiente</button>
+    <div>La afición principal de <span className="nombreRey">{nombreRey}</span> es  <span className="aficionRey">{aficion}</span>
+     </div>
+    
+    </>
+  )
 }
-
 export default App;
