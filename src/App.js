@@ -2,41 +2,52 @@ import React,{useState} from "react";
 import "./style.css";
 
 const App = () => {
-  const reyesGodos=[
+  const cambios=[
     {
-      nombre: "Ataúlfo",
-      aficion: "comer toros sin pelar",
+      moneda: "Euro",
+      cambio:1,
     },{
-      nombre: "Recesvinto",
-      aficion: "leer a Hegel en arameo",
+      moneda: "Peso argentino",
+      cambio:118.6,
     },{
-      nombre: "Teodorico",
-      aficion: "la cría del escarabajo en almíbar"
+      moneda: "Peso colombiano",
+      cambio:4543.5,
+    },{
+      moneda: "Peso mexicano",
+      cambio:23.2,
+    },{
+      moneda: "Dólar",
+      cambio:1.14
     }
   ]
-  const [contador,setContador] = useState(0);
-  const [nombreRey,setNombreRey] = useState(reyesGodos[0].nombre);
-  const [aficion,setAficion] = useState(reyesGodos[0].aficion);
- 
-  const siguiente=(e)=>{ 
-    setContador(contador+1);
-    console.log("Click:"+contador);
-    setNombreRey(reyesGodos[contador].nombre);
-    setAficion(reyesGodos[contador].aficion); 
-    if(contador+1>=reyesGodos.length){
-      setContador(0);
-      console.log("Click c:"+contador);
-    }    
+
+  const [euro,setEuro] = useState();
+  const [argentina,setArgentina] = useState();
+  const [colombia,setColombia] = useState();
+  const [mexico,setMexico] = useState();
+  const [dolar,setDolar] = useState();
+
+  const calculaTC=(e)=>{
+    setArgentina(Number(e.target.value)*Number(cambios[1].cambio));
+    setColombia(Number(e.target.value)*Number(cambios[2].cambio));
+    setMexico(Number(e.target.value)*Number(cambios[3].cambio));
+    setDolar(Number(e.target.value)*Number(cambios[4].cambio));
   }
-  console.log("Inicio:"+contador);
+
   return (
     <>
-    {/* Esto es un comentario dentro del return*/}
-    {/* Crear un <div> y un <button> */}   
-    <button onClick={siguiente}>Ver Siguiente</button>
-    <div>La afición principal de <span className="nombreRey">{nombreRey}</span> es  <span className="aficionRey">{aficion}</span>
-     </div>
-    
+    <div>
+        <label htmlFor="Euro">Euro</label>
+        <input value={euro} onChange={calculaTC} id="Euro" type="number"/> 
+        <label htmlFor="Peso argentino">Peso Argentino</label>
+        <input value={argentina} id="Peso argentino" type="number" readOnly/>
+        <label htmlFor="Peso colombiano">Peso Colombiano</label>
+        <input value={colombia} id="Peso colombiano" type="number" readOnly/>
+        <label htmlFor="Peso mexicano">Peso Mexicano</label>
+        <input value={mexico} id="Peso mexicano" type="number" readOnly/> 
+        <label htmlFor="Dólar">Dollar</label>
+        <input value={dolar} id="Dólar" type="number" readOnly/> 
+    </div>    
     </>
   )
 }
