@@ -1,6 +1,7 @@
 .capaPrincipal{
-  display:flex;
+  display:grid;
   justify-content: center;
+  grid-column: 2 / 2;
 }
 
 .capaImagen{
