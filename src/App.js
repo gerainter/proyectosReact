@@ -45,7 +45,6 @@ export default function App() {
       </div>
       <div className="capaPrincipal">
         <Componente1 imagen={imagen1} colorFondo={reyes[0].color} titulo={reyes[0].nombre} precio={reyes[0].precio}
-        setTotal={totalPagar}
         ></Componente1>
         <Componente1 imagen={imagen2} colorFondo={reyes[1].color} titulo={reyes[1].nombre} precio={reyes[1].precio}></Componente1>
         <Componente1 imagen={imagen3} colorFondo={reyes[2].color} titulo={reyes[2].nombre} precio={reyes[2].precio}></Componente1>

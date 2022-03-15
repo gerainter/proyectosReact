@@ -2,11 +2,9 @@ import "./style.css";
 import React,{useState} from "react";
 
  function Componente1(prop) {
-  const [totalPagar,setTotalPagar] = useState(0);
-  const sumaTotalPagar=(e)=>{
+  const sumaTotalPagar=()=>{
     setTotalPagar((e)=> e + prop.precio);
   }
-  console.log(totalPagar);
   return (
     <>
       <div style={{backgroundColor: prop.colorFondo}} className="capaImagen">
