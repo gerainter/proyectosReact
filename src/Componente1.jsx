@@ -2,6 +2,11 @@ import "./style.css";
 import React,{useState} from "react";
 
  function Componente1(prop) {
+  const [totalPagar,setTotalPagar] = useState(0);
+  const sumaTotalPagar=(e)=>{
+    setTotalPagar((e)=> e + prop.precio);
+  }
+  console.log(totalPagar);
   return (
     <>
       <div style={{backgroundColor: prop.colorFondo}} className="capaImagen">
@@ -14,7 +19,7 @@ import React,{useState} from "react";
             <br></br>
             <span>{prop.precio} $</span>
             <br></br>
-            <button>Comprar</button>
+            <button onClick={sumaTotalPagar}>Comprar</button>
          </div> 
       </div>
     </>
