@@ -1,21 +1,23 @@
 import "./style.css";
 import React,{useState} from "react";
 
- function Componente1(prop) {
-  const sumaTotalPagar=()=>{
-    setTotalPagar((e)=> e + prop.precio);
+ function Componente1({imagen,colorFondo,titulo,precio,setTotalPagar}) {
+  const sumaTotalPagar=(elemento)=>{
+    setTotalPagar((e)=> e + precio);
+    elemento.target.parentNode.parentNode.style.display = 'none';
+    
   }
   return (
     <>
-      <div style={{backgroundColor: prop.colorFondo}} className="capaImagen">
-        <div className="capaTitulo">{prop.titulo}</div>
+      <div style={{backgroundColor: colorFondo}} className="capaImagen">
+        <div className="capaTitulo">{titulo}</div>
         <div>
-          <img src={prop.imagen}/>
+          <img src={imagen}/>
         </div>
          <div className="capaPrecio">
             <span>Precio:</span>
             <br></br>
-            <span>{prop.precio} $</span>
+            <span>{precio} $</span>
             <br></br>
             <button onClick={sumaTotalPagar}>Comprar</button>
          </div> 
